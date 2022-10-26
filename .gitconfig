@@ -1,0 +1,17 @@
+[user]
+	name = Víctor
+	email = vdelrio@tirant.com
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = vim
+[pull]
+	rebase = false
+[init]
+	defaultBranch = initialBranch
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[fetch]
+    prune = true
+[alias]
+    local-branches = !git branch -vv | cut -c 3- | awk '$3 !~/\\[origin/ { print $1 }'
+    gone-branches = !git branch -vv | cut -c 3- | grep \"\\[origin.*: gone\\]\" | awk '{ print $1 }'

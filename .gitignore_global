@@ -1,0 +1,5 @@
+.rubocop.yml
+.eslintrc.json
+.haml-lint.yml
+.flake8
+tags

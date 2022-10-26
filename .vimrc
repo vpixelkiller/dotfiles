@@ -7,7 +7,7 @@ set ignorecase    " Searches are case-insensitive
 set smartcase     " Search case-sensitively for terms with uppercase letters
 set incsearch     " Show search hits while typing
 set nohlsearch    " Do not highlight search hits
-set rnu
+" set rnu
 " set inccommand=nosplit   " Highlight and preview replace for substitute command
 
 " Indentation and tabs
@@ -16,6 +16,10 @@ set tabstop=4        " A <Tab> is four spaces
 set shiftwidth=4     " Indentation shift is 4 spaces
 set expandtab        " Use spaces instead of tabs
 set backspace=indent,eol,start      " Sensible backspace behaviour
+
+" Completion
+set complete+=kspell
+set completeopt=menuone,longest
 
 " Custom status line
 set laststatus=2
@@ -81,7 +85,6 @@ endif
 " Load matchit (match do ... end)
 runtime macros/matchit.vim
 
-
 " ------------------------------------------------------------------------------
 " Mappings and custom commands
 " ------------------------------------------------------------------------------
@@ -119,13 +122,13 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-nnoremap <C-n> :call g:ToggleNuMode()<cr>
+" nnoremap <C-n> :call g:ToggleNuMode()<cr>
 
 " Ease things for spanish keyboard
 noremap ñ /
 noremap Ñ ?
 let mapleader = ","
-" hola
+
 " Use the silver searcher for grepping  ||| VER CÓMO FUNCIONA CON ACK
 cnoreabbrev Ack Ack!
 nnoremap <Leader>ag :Ack!<Space>
@@ -322,12 +325,13 @@ Plug 'tek/vim-textobj-ruby'
 Plug 'whatyouhide/vim-textobj-erb'
 " Open file:line
 Plug 'bogado/file-line'
-" Snippets
-Plug 'SirVer/ultisnips'
 " Show indentation lines
 Plug 'yggdroot/indentline'
+" Comentary toggle
+Plug 'tpope/vim-commentary' 
 " Autocomplete
 if has('nvim')
+    Plug 'vim-scripts/AutoComplPop'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     " Autocomplete source: syntax highlighting
     Plug 'Shougo/neco-syntax'
@@ -345,6 +349,19 @@ endif
 " nginx syntax highlighting
 Plug 'chr4/nginx.vim'
 call plug#end()
+
+" Snippets
+Plug 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
+" Plugin 'honza/vim-snippets'
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 " NERDTree settings
 nnoremap <leader>n :NERDTreeToggle<cr>
@@ -455,9 +472,9 @@ syntax on
 filetype plugin indent on
 
 " Vim's auto indentation feature does not work properly with text copied from outside of Vim. Press the <F2> key to toggle paste mode on/off.
-" nnoremap <F2> :set invpaste paste?<CR>
-" imap <F2> <C-O>:set invpaste paste?<CR>
-" set pastetoggle=<F2>
+nnoremap <F2> :set invpaste paste?<CR>
+imap <F2> <C-O>:set invpaste paste?<CR>
+set pastetoggle=<F2>
 
 " Uncomment below to set the max textwidth. Use a value corresponding to the width of your screen.
 " set textwidth=100
@@ -515,7 +532,7 @@ vnoremap <Space> zf
 " autocmd BufWinLeave *.* mkview 
 " autocmd BufWinEnter *.* silent loadview 
 noremap <leader><cr> <cr><c-w>h:q<cr>
-nnoremap <leader>th :sp<CR><C-w>J10<C-w>_:terminal<CR>
+nnoremap <leader>th :sp<CR><C-w>J15<C-w>_:terminal<CR>
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 :helptags ~/.vim/bundle/ctrlp.vim/doc
@@ -531,14 +548,14 @@ let g:airline_powerline_fonts = 1
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " relative number toggle function.
-function! g:ToggleNuMode()
-	if(&rnu == 1)
-		set norelativenumber
-		set number
-	else
-		set relativenumber
-	endif
-endfunc
+" function! g:ToggleNuMode()
+" 	if(&rnu == 1)
+" 		set norelativenumber
+" 		set number
+" 	else
+" 		set relativenumber
+" 	endif
+" endfunc
 
 " Rubocop lintern.
 let g:vimrubocop_config = '~/.rubocop.yml'
