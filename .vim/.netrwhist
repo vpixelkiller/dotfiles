@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/Users/victorTirant/coding/despachos/gd-web'
+let g:netrw_dirhist_7='/'
+let g:netrw_dirhist_6='/bin'
+let g:netrw_dirhist_5='/'
+let g:netrw_dirhist_4='/Users'
+let g:netrw_dirhist_3='/Users/victorTirant'
+let g:netrw_dirhist_2='/Users/victorTirant/.SpaceVim.d'
+let g:netrw_dirhist_1='/Users/victorTirant'
+let g:netrw_dirhist_0='/Users/victorTirant/.SpaceVim'
+let g:netrw_dirhist_9='/Users/victorTirant/.SpaceVim/.SpaceVim.d'
