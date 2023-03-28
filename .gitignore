@@ -1,1 +1,6 @@
 .vscode
+/log/*
+/tmp/*
+
+node_modules/
+./.config/coc/extensions/node_modules

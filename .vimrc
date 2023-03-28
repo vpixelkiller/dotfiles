@@ -40,7 +40,7 @@ highlight StatusLine ctermfg=240
 augroup vdelrio
     autocmd!
     " Tab sizes per file type
-    autocmd Filetype html,scss,eruby,xml,yaml,eruby.yaml,ruby,haml,javascript,vue,dart setlocal tabstop=2 shiftwidth=2
+    autocmd Filetype html,scss,eruby,xml,yaml,eruby.yaml,ruby,haml,javascript,vue setlocal tabstop=2 shiftwidth=2
     " Keyword chars per file type
     autocmd Filetype ruby setlocal iskeyword+=?
     autocmd Filetype haml setlocal iskeyword+=?,-
@@ -319,8 +319,11 @@ Plug 'vim-test/vim-test'
 Plug 'tpope/vim-dispatch'
 " Custom text-objects
 Plug 'kana/vim-textobj-user'
+<<<<<<< HEAD
 " CoC
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+=======
+>>>>>>> 1edb14526564351eb9fc0cc3bcd8d695531b727b
 " Ruby text-objects: r(uby block), f(unction), c(lass), n(ame)
 Plug 'tek/vim-textobj-ruby'
 " ERB text-objects: E(RB)
@@ -331,9 +334,12 @@ Plug 'bogado/file-line'
 Plug 'yggdroot/indentline'
 " Comentary toggle
 Plug 'tpope/vim-commentary' 
+<<<<<<< HEAD
 " Markdown viewer
 Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
 
+=======
+>>>>>>> 1edb14526564351eb9fc0cc3bcd8d695531b727b
 " Autocomplete
 if has('nvim')
     Plug 'vim-scripts/AutoComplPop'
@@ -353,9 +359,12 @@ if executable('rubocop')
 endif
 " nginx syntax highlighting
 Plug 'chr4/nginx.vim'
+<<<<<<< HEAD
 " Flutter
 Plug 'nvim-lua/plenary.nvim'
 Plug 'akinsho/flutter-tools.nvim'
+=======
+>>>>>>> 1edb14526564351eb9fc0cc3bcd8d695531b727b
 call plug#end()
 
 " Snippets
@@ -371,6 +380,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+<<<<<<< HEAD
 " LSPConfig
 " local use = require('packer').use
 " require('packer').startup(function()
@@ -389,6 +399,8 @@ nnoremap <leader>ca <Cmd>lua vim.lsp.buf.code_action()<CR>
 xnoremap <leader>ca <Cmd>lua vim.lsp.buf.range_code_action()<CR>
 
 
+=======
+>>>>>>> 1edb14526564351eb9fc0cc3bcd8d695531b727b
 " NERDTree settings
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>i :NERDTreeFind<cr>

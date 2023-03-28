@@ -1,5 +1,4 @@
 alias ibrew="arch -x86_64 /usr/local/bin/brew"
-# alias vpn='sudo \vpn'
 alias vi='nvim'
 alias be='bundle exec'
 alias ber='bundle exec rspec --format documentation'

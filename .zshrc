@@ -135,15 +135,14 @@ export SECRET_KEY_BASE=56f8c189ff92692c4ee16998f6676fc5336e4d448e186a71d3a39114e
 # export RAILS_SERVE_STATIC_FILES=yes
 export LOG_LEVEL=warn
 
-export PATH="/opt/homebrew/opt/m4/bin:$PATH"
+eval "$(rbenv init -)"
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
-export PATH="$PATH:/Library/Developer/flutter/bin"
 export PATH="/opt/homebrew/opt/ruby@2.6/bin:$PATH"
+export PATH="$PATH:/Library/Developer/flutter/bin"
 export LDFLAGS="-L/opt/homebrew/opt/ruby@2.6/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/ruby@2.6/include"
-export PATH="/opt/homebrew/opt/ruby@2.6/bin:$PATH"
 export PATH="$HOME/Library/Android/sdk/emulator:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
