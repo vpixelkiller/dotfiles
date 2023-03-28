@@ -12,7 +12,7 @@ set nohlsearch    " Do not highlight search hits
 
 " Indentation and tabs
 set autoindent       " Copy indent from current line when starting a new line
-set tabstop=4        " A <Tab> is four spaces
+set tabstop=2        " A <Tab> is four spaces
 set shiftwidth=4     " Indentation shift is 4 spaces
 set expandtab        " Use spaces instead of tabs
 set backspace=indent,eol,start      " Sensible backspace behaviour
@@ -40,7 +40,7 @@ highlight StatusLine ctermfg=240
 augroup vdelrio
     autocmd!
     " Tab sizes per file type
-    autocmd Filetype html,scss,eruby,xml,yaml,eruby.yaml,ruby,haml,javascript,vue setlocal tabstop=2 shiftwidth=2
+    autocmd Filetype html,scss,eruby,xml,yaml,eruby.yaml,ruby,haml,javascript,vue,dart setlocal tabstop=2 shiftwidth=2
     " Keyword chars per file type
     autocmd Filetype ruby setlocal iskeyword+=?
     autocmd Filetype haml setlocal iskeyword+=?,-
@@ -319,6 +319,8 @@ Plug 'vim-test/vim-test'
 Plug 'tpope/vim-dispatch'
 " Custom text-objects
 Plug 'kana/vim-textobj-user'
+" CoC
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 " Ruby text-objects: r(uby block), f(unction), c(lass), n(ame)
 Plug 'tek/vim-textobj-ruby'
 " ERB text-objects: E(RB)
@@ -329,6 +331,9 @@ Plug 'bogado/file-line'
 Plug 'yggdroot/indentline'
 " Comentary toggle
 Plug 'tpope/vim-commentary' 
+" Markdown viewer
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
+
 " Autocomplete
 if has('nvim')
     Plug 'vim-scripts/AutoComplPop'
@@ -348,6 +353,9 @@ if executable('rubocop')
 endif
 " nginx syntax highlighting
 Plug 'chr4/nginx.vim'
+" Flutter
+Plug 'nvim-lua/plenary.nvim'
+Plug 'akinsho/flutter-tools.nvim'
 call plug#end()
 
 " Snippets
@@ -362,6 +370,24 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" LSPConfig
+" local use = require('packer').use
+" require('packer').startup(function()
+  " use 'wbthomason/packer.nvim' -- Package manager
+  " use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+" end)
+
+""" FLUTTER
+ " Show hover
+nnoremap K <Cmd>lua vim.lsp.buf.hover()<CR>
+ " Jump to definition
+nnoremap gd <Cmd>lua vim.lsp.buf.definition()<CR>
+ " Open code actions using the default lsp UI, if you want to change this please see the plugins above
+nnoremap <leader>ca <Cmd>lua vim.lsp.buf.code_action()<CR>
+ " Open code actions for the selected visual range
+xnoremap <leader>ca <Cmd>lua vim.lsp.buf.range_code_action()<CR>
+
 
 " NERDTree settings
 nnoremap <leader>n :NERDTreeToggle<cr>

@@ -2,4 +2,6 @@
 .eslintrc.json
 .haml-lint.yml
 .flake8
+.vim_test_commands
+scripts/up.sh
 tags

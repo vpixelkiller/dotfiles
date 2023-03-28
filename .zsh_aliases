@@ -1,0 +1,16 @@
+alias ibrew="arch -x86_64 /usr/local/bin/brew"
+# alias vpn='sudo \vpn'
+alias vi='nvim'
+alias be='bundle exec'
+alias ber='bundle exec rspec --format documentation'
+alias ll='ls -la'
+alias ctags='/usr/local/bin/ctags'
+alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}" "$@"'
+alias ze='exec zsh -l'
+alias cisco='open -a "Cisco AnyConnect Secure Mobility Client"'
+alias ciscokill='pkill -x "Cisco AnyConnect Secure Mobility Client"'
+alias vpnc="cd /Users/victorTirant/coding/vpn_scripts && ./vpn_tirant -c vdelrio@tirant rYFmtCzy6jmL && cisco"
+alias vpnd="cd /Users/victorTirant/coding/vpn_scripts && ./vpn_tirant -d && ciscokill"
+alias vpns="cd /Users/victorTirant/coding/vpn_scripts && ./vpn_tirant -s"
+alias nx="cd /Users/victorTirant/coding/tol/tirantonline/ && nginx -p . -c nginx.conf"
+

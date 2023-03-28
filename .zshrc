@@ -126,19 +126,44 @@ zstyle ':completion:*' menu select
 #
 
 # Example aliases
+# ALIASES WERE LOADED FROM ~/.zsh_aliases
+source ~/.zsh_aliases
 
-eval "$(rbenv init -)"
-
-alias ibrew="arch -x86_64 /usr/local/bin/brew"
-alias vpn='sudo \vpn'
-alias vi='nvim'
-alias be='bundle exec'
-alias ber='bundle exec rspec --format documentation'
-alias ll='ls -la'
-alias ctags='/usr/local/bin/ctags'
-alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}" "$@"'
+# Necesario para apitol
+export RAILS_ENV=development
+export SECRET_KEY_BASE=56f8c189ff92692c4ee16998f6676fc5336e4d448e186a71d3a39114e576edb0f16c96317910506ca54c5c297c399a1f4600d6b73b5b6f5a714c7467fc5c6b39
+# export RAILS_SERVE_STATIC_FILES=yes
+export LOG_LEVEL=warn
 
 export PATH="/opt/homebrew/opt/m4/bin:$PATH"
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+export PATH="$PATH:/Library/Developer/flutter/bin"
+export PATH="/opt/homebrew/opt/ruby@2.6/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/ruby@2.6/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/ruby@2.6/include"
+export PATH="/opt/homebrew/opt/ruby@2.6/bin:$PATH"
+export PATH="$HOME/Library/Android/sdk/emulator:$PATH"
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="${HOME}/.pyenv/shims:${PATH}"
+eval "$(pyenv init --path)"
+export PATH="$HOME/.jenv/bin:$PATH"
+export GRAILS_OPTS="-XX:MaxPermSize=2048M -Xmx2048M -Dhttps.protocols=TLSv1.2"
+export GRAILS_HOME=/Library/grails-2.3.11
+export PATH="$PATH:$GRAILS_HOME/bin"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.7.0_80)
+export PATH="$PATH:$JAVA_HOME/bin"
+export PATH="/opt/homebrew/opt/mongodb-community@4.4/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/mysql@5.7/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/mysql@5.7/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql@5.7/lib/pkgconfig"
