@@ -8,8 +8,10 @@ alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}
 alias ze='exec zsh -l'
 alias cisco='open -a "Cisco AnyConnect Secure Mobility Client"'
 alias ciscokill='pkill -x "Cisco AnyConnect Secure Mobility Client"'
-alias vpnc="cd /Users/victorTirant/coding/vpn_scripts && ./vpn_tirant -c vdelrio@tirant rYFmtCzy6jmL && cisco"
 alias vpnd="cd /Users/victorTirant/coding/vpn_scripts && ./vpn_tirant -d && ciscokill"
+alias vpnc="cd /Users/victorTirant/coding/vpn_scripts && ./vpn_tirant -c vdelrio@tirant rYFmtCzy6jmL && cisco"
 alias vpns="cd /Users/victorTirant/coding/vpn_scripts && ./vpn_tirant -s"
 alias nx="cd /Users/victorTirant/coding/tol/tirantonline/ && nginx -p . -c nginx.conf"
-
+alias drm='docker rm -f $(docker ps -a -q) && docker network prune -f'
+alias sa='source ~/.zshrc'
+alias ga='grails clean && grails compile && grails -Dhttps.protocols=TLSv1.2 run-app'

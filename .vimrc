@@ -40,6 +40,7 @@ highlight StatusLine ctermfg=240
 augroup vdelrio
     autocmd!
     " Tab sizes per file type
+    autocmd Filetype groovy,grails setlocal tabstop=4 shiftwidth=4
     autocmd Filetype html,scss,eruby,xml,yaml,eruby.yaml,ruby,haml,javascript,vue setlocal tabstop=2 shiftwidth=2
     " Keyword chars per file type
     autocmd Filetype ruby setlocal iskeyword+=?
@@ -410,6 +411,7 @@ nnoremap <leader>m :CtrlPBufTag<cr>
 let g:ale_linters = { 'ruby': ['ruby'] }
 if executable('rubocop')
     let g:ale_linters = { 'ruby': ['rubocop'] }
+    let g:ale_ruby_rubocop_executable = 'bundle'
     function! ToggleRubocop()
         if has_key(g:ale_linters, 'ruby')
             if g:ale_linters['ruby'] == ['ruby']
@@ -582,7 +584,8 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " endfunc
 
 " Rubocop lintern.
-let g:vimrubocop_config = '~/.rubocop.yml'
+" ngmy
+" let g:vimrubocop_config = '~/.rubocop.yml'
 
 " Autocomplete html tags
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
