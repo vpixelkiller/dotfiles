@@ -356,6 +356,7 @@ Plug 'chr4/nginx.vim'
 " Flutter
 Plug 'nvim-lua/plenary.nvim'
 Plug 'akinsho/flutter-tools.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.3' }
 call plug#end()
 
 " Snippets
@@ -572,6 +573,18 @@ let g:coc_global_extensions = [ 'coc-tsserver' ]
 
 let g:airline_powerline_fonts = 1
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Using Lua functions
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 " relative number toggle function.
 " function! g:ToggleNuMode()
