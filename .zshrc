@@ -144,6 +144,7 @@ export PATH="$PATH:/Library/Developer/flutter/bin"
 export LDFLAGS="-L/opt/homebrew/opt/ruby@2.6/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/ruby@2.6/include"
 export PATH="$HOME/Library/Android/sdk/emulator:$PATH"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
@@ -159,7 +160,9 @@ export PATH="$PATH:$GRAILS_HOME/bin"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.7.0_80)
+# export JAVA_HOME=$(/usr/libexec/java_home -v 1.7.0_80)
+export JAVA_HOME=`/usr/libexec/java_home -v 17`
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_382`
 export PATH="$PATH:$JAVA_HOME/bin"
 export PATH="/opt/homebrew/opt/mongodb-community@4.4/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"

@@ -347,6 +347,7 @@ if has('nvim')
 endif
 " Dart syntax highlighting
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'tpope/vim-projectionist'
 " Rubocop autocorrection
 if executable('rubocop')
   Plug 'etordera/vim-rubocop-autocorrect'
@@ -361,12 +362,13 @@ call plug#end()
 
 " Snippets
 Plug 'SirVer/ultisnips'
+Plug 'natebosch/dartlang-snippets'
 " Snippets are separated from the engine. Add this if you want them:
-" Plugin 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
 " - https://github.com/Valloric/YouCompleteMe
 " - https://github.com/nvim-lua/completion-nvim
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
@@ -569,7 +571,22 @@ nnoremap K :Ack! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
-let g:coc_global_extensions = [ 'coc-tsserver' ]
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-tsserver',
+  \ 'coc-eslint', 
+  \ 'coc-prettier', 
+  \ 'coc-json', 
+  \ 'coc-flutter',
+  \ 'coc-snippets',
+  \ 'coc-yaml',
+  \ 'coc-tslint-plugin',
+  \ 'coc-tsserver',
+  \ 'coc-emmet',
+  \ 'coc-css',
+  \ 'coc-html',
+  \ 'coc-json',
+  \ ]
 
 let g:airline_powerline_fonts = 1
 let g:ackprg = 'ag --nogroup --nocolor --column'
