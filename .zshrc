@@ -160,8 +160,8 @@ export PATH="$PATH:$GRAILS_HOME/bin"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-# export JAVA_HOME=$(/usr/libexec/java_home -v 1.7.0_80)
-export JAVA_HOME=`/usr/libexec/java_home -v 17`
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.7.0_80)
+# export JAVA_HOME=`/usr/libexec/java_home -v 17`
 # export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_382`
 export PATH="$PATH:$JAVA_HOME/bin"
 export PATH="/opt/homebrew/opt/mongodb-community@4.4/bin:$PATH"
