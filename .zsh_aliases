@@ -1,26 +1,39 @@
-alias ibrew="arch -x86_64 /usr/local/bin/brew"
-alias vi='nvim'
-alias be='bundle exec'
-alias ber='bundle exec rspec --format documentation'
-alias ll='ls -la'
-alias ctags='/usr/local/bin/ctags'
-alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}" "$@"'
-alias ze='exec zsh -l'
-alias cisco='open -a "Cisco AnyConnect Secure Mobility Client"'
-alias ciscokill='pkill -x "Cisco AnyConnect Secure Mobility Client"'
-alias vpnd="cd /Users/victorTirant/coding/vpn_scripts && ./vpn_tirant -d && ciscokill"
-alias vpnc="cd /Users/victorTirant/coding/vpn_scripts && ./vpn_tirant -c vdelrio@tirant rYFmtCzy6jmL && cisco"
-alias vpns="cd /Users/victorTirant/coding/vpn_scripts && ./vpn_tirant -s"
-alias nx="cd /Users/victorTirant/coding/tol/tirantonline/ && nginx -p . -c nginx.conf"
-alias drm='docker rm -f $(docker ps -a -q) && docker network prune -f'
-alias sa='source ~/.zshrc'
-alias ga='grails clean && grails compile && grails -Dhttps.protocols=TLSv1.2 run-app'
-alias toe='sh /Users/victorTirant/.dotfiles/pixel_scripts/setupTirantOnline.sh exec'
-alias to='sh /Users/victorTirant/.dotfiles/pixel_scripts/setupTirantOnline.sh'
-alias tok='drm && tmux kill-session -t tOnlineSession'
+# AUTOEXEC
+alias cloe='sh /Users/victorTirant/.dotfiles/pixel_scripts/setupTirantCloud.sh exec'
+alias clo='sh /Users/victorTirant/.dotfiles/pixel_scripts/setupTirantCloud.sh'
+alias clok="docker ps -a | grep cloud-service | awk '{print $1}' | xargs docker rm -f & tmux kill-session -t TirantCloudSession"
 alias soe='sh /Users/victorTirant/.dotfiles/pixel_scripts/setupSofia.sh exec'
 alias so='sh /Users/victorTirant/.dotfiles/pixel_scripts/setupSofia.sh'
-alias sok='drm && tmux kill-session -t sofiaSession'
-alias soe='sh /Users/victorTirant/.dotfiles/pixel_scripts/setupTirantCloud.sh exec'
-alias so='sh /Users/victorTirant/.dotfiles/pixel_scripts/setupTirantCloud.sh'
-alias sok='drm && tmux kill-session -t TirantCloudSession'
+alias sok="docker ps -a | grep sofia | awk '{print $1}' | xargs docker rm -f & tmux kill-session -t sofiaSession"
+alias toe='sh /Users/victorTirant/.dotfiles/pixel_scripts/setupTirantOnline.sh exec'
+alias to='sh /Users/victorTirant/.dotfiles/pixel_scripts/setupTirantOnline.sh'
+alias tok="docker ps -a | grep -E 'tolweb|apitol|api|tol' | awk '{print $1}' | xargs docker rm -f & tmux kill-session -t tOnlineSession"
+# GLOBAL
+alias ctags='/usr/local/bin/ctags'
+alias goto_path='cd $current_pwd'
+alias ibrew="arch -x86_64 /usr/local/bin/brew"
+alias ll='ls -la'
+alias sa='source ~/.zshrc'
+alias save_path='export current_pwd=$(pwd)'
+alias vi='nvim'
+alias ze='exec zsh -l'
+# DOCKER
+alias drm='docker rm -f $(docker ps -a -q) && docker network prune -f'
+alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}" "$@"'
+alias dr='make down && make serve'
+# GIT
+alias gch="git checkout $1"
+# GRAILS
+alias ga='grails clean && grails compile && grails -Dhttps.protocols=TLSv1.2 run-app'
+# NGINX
+alias nx="cd /Users/victorTirant/coding/tol/tirantonline/ && nginx -p . -c nginx.conf"
+# RUBY/RAILS
+alias be='bundle exec'
+alias ber='bundle exec rspec --format documentation'
+# VPN
+alias cisco='open -a "Cisco AnyConnect Secure Mobility Client"'
+alias ciscokill='pkill -x "Cisco AnyConnect Secure Mobility Client"'
+alias govpn="cd /Users/victorTirant/coding/vpn_scripts && ./vpn_tirant"
+alias vpnd="save_path && govpn -d && ciscokill && goto_path"
+alias vpnc="save_path && govpn -c vdelrio@tirant rYFmtCzy6jmL && cisco && goto_path"
+alias vpns="save_path && govpn -s && goto_path"

@@ -153,7 +153,7 @@ eval "$(rbenv init -)"
 export PATH="${HOME}/.pyenv/shims:${PATH}"
 eval "$(pyenv init --path)"
 export PATH="$HOME/.jenv/bin:$PATH"
-export GRAILS_OPTS="-XX:MaxPermSize=2048M -Xmx2048M -Dhttps.protocols=TLSv1.2"
+export GRAILS_OPTS="-XX:MaxPermSize=4096M -Xmx4096M -Dhttps.protocols=TLSv1.2"
 export GRAILS_HOME=/Library/grails-2.3.11
 export PATH="$PATH:$GRAILS_HOME/bin"
 
@@ -169,3 +169,4 @@ export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/mysql@5.7/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/mysql@5.7/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql@5.7/lib/pkgconfig"
+export AWS_DEFAULT_PROFILE="libraries"

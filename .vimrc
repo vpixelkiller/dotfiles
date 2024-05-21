@@ -358,6 +358,10 @@ Plug 'chr4/nginx.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'akinsho/flutter-tools.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.3' }
+
+
+" Base64encoder
+Plug 'taybart/b64.nvim'
 call plug#end()
 
 " Snippets
@@ -365,6 +369,7 @@ Plug 'SirVer/ultisnips'
 Plug 'natebosch/dartlang-snippets'
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
+
 " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
 " - https://github.com/Valloric/YouCompleteMe
 " - https://github.com/nvim-lua/completion-nvim
@@ -602,6 +607,9 @@ nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+vnoremap <silent> <leader>be :<c-u>lua require("b64").encode()<cr>
+vnoremap <silent> <leader>bd :<c-u>lua require("b64").decode()<cr>
 
 " relative number toggle function.
 " function! g:ToggleNuMode()
