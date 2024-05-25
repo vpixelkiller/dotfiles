@@ -359,7 +359,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'akinsho/flutter-tools.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.3' }
 
-
 " Base64encoder
 Plug 'taybart/b64.nvim'
 call plug#end()
@@ -369,6 +368,8 @@ Plug 'SirVer/ultisnips'
 Plug 'natebosch/dartlang-snippets'
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
+" html-css complete
+Plug 'mattn/emmet-vim'
 
 " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
 " - https://github.com/Valloric/YouCompleteMe
@@ -378,7 +379,8 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-
+"Path to python3
+let g:python3_host_prog = '/usr/bin/python3'
 " LSPConfig
 " local use = require('packer').use
 " require('packer').startup(function()
